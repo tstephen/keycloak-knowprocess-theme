@@ -1,0 +1,50 @@
+.login-pf body {
+    background-color: white;
+    background-image: none;
+    background-size: cover;
+    height: 100%;
+}
+
+#kc-logo-wrapper {
+    background-image: url(../img/knowprocess-logo.png);
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 300px;
+    margin: 62px auto 0;
+}
+
+div.kc-logo-text {
+    background-image: url(../img/knowprocess-logo.png);
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div.kc-logo-text span {
+    display: none;
+}
+
+.btn-primary {
+    background-color: #bbd3d3;
+    background-image: none;
+    color: #9e3472;
+    border-width: 0;
+    line-height: 3rem;
+}
+
+.btn-primary.active, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open .dropdown-toggle.btn-primary {
+    background-color: #9e3472;
+    border-width: 0;
+    color: #bbd3d3;
+    line-height: 3rem;
+}
+
+.card-pf {
+  background: #fff;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 500px;
+  border: 1px solid #bbd3d3;
+  box-shadow: 0 0 0;
+}

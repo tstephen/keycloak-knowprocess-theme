@@ -1,0 +1,6 @@
+{
+    "themes": [{
+        "name" : "knowprocess",
+        "types": [ "login", "email" ]
+    }]
+}
