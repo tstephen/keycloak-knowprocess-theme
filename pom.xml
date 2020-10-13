@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.knowprocess.keycloak</groupId>
+  <artifactId>knowprocess-theme</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>Keycloak KnowProcess theme</name>
+  <inceptionYear>2020</inceptionYear>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>kp-repo</id>
+      <name>KnowProcess public repository</name>
+      <url>scpexe://knowprocess.com/var/www-knowprocess/maven</url>
+    </repository>
+  </distributionManagement>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ssh-external</artifactId>
+         <version>1.0-beta-6</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <!-- 
+         To push to dockerhub supply credentials at command line like: 
+         mvn deploy -Ddockerfile.username=... -Ddockerfile.password=...
+      -->
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>dockerfile-maven-plugin</artifactId>
+        <version>${dockerfile-maven-version}</version>
+        <executions>
+          <execution>
+            <id>default</id>
+            <goals>
+              <goal>build</goal>
+              <goal>push</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <repository>knowprocess/keycloak-theme</repository>
+          <tag>${project.version}</tag>
+          <buildArgs>
+            <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+          </buildArgs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
