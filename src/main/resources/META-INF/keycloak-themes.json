@@ -2,5 +2,8 @@
     "themes": [{
         "name" : "knowprocess",
         "types": [ "login", "email" ]
+    },{
+        "name" : "srp",
+        "types": [ "login", "email" ]
     }]
 }
