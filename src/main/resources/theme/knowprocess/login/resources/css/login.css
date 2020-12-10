@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .login-pf body {
     background-color: #fff;
     background-image: none !important;
+    font-family: 'Montserrat', sans-serif;
     height: 100%;
 }
 
@@ -105,6 +108,7 @@ div.kc-logo-text span {
 
 #kc-header-wrapper {
     color: #666;
+    font-family: 'Signika', sans-serif;
     font-size: 29px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -563,4 +567,5 @@ form#kc-select-back-form div.login-pf-social-section {
 }
 .h1, .h2, h1, h2 {
     color: #9e3472;
+    font-family: 'Signika', sans-serif;
 }
